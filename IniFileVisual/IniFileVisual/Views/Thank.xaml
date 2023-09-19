@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="IniFileVisual.Views.Thank"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:hc="https://handyorg.github.io/handycontrol"
+             mc:Ignorable="d" Height="450" Width="650">
+    <hc:SimplePanel>
+        <TextBlock HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="95" FontSize="20"><Run FontWeight="Bold" Text="特别鸣谢"/></TextBlock>
+        <TextBlock Margin="20,60,20,20" FontSize="16"><Run Text="我在开发过程中使用了以下第三方库，感谢这些库的开发者提供了优秀的代码支持:"/>
+            <LineBreak/><LineBreak/>
+            <Run Text="1. HandyControl"/>
+            <LineBreak/>
+            <Hyperlink  NavigateUri="https://handyorg.github.io/"  Click="Hyperlink_Click">https://handyorg.github.io/</Hyperlink>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="2. Ini-parser"/>
+            <LineBreak/>
+            <Hyperlink  NavigateUri="https://github.com/rickyah/ini-parser"  Click="Hyperlink_Click">https://github.com/rickyah/ini-parser</Hyperlink>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="3.AvalonEdit"/>
+            <LineBreak/>
+            <Hyperlink  NavigateUri="http://avalonedit.net/"  Click="Hyperlink_Click">http://avalonedit.net/</Hyperlink>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="4.AvalonDock"/>
+            <LineBreak/>
+            <Hyperlink  NavigateUri="https://github.com/Dirkster99/AvalonDock"  Click="Hyperlink_Click">https://github.com/Dirkster99/AvalonDock</Hyperlink>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="6.MvvmLight"/>
+            <LineBreak/>
+            <Hyperlink  NavigateUri="http://www.mvvmlight.net/"  Click="Hyperlink_Click">http://www.mvvmlight.net/</Hyperlink>
+        </TextBlock>
+    </hc:SimplePanel>
+</UserControl>

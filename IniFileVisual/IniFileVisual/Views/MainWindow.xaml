@@ -1,0 +1,291 @@
+﻿<hc:Window  x:Class="IniFileVisual.Views.MainWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:xcad="https://github.com/Dirkster99/AvalonDock"
+            xmlns:hc="https://handyorg.github.io/handycontrol"
+            xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+            xmlns:local="clr-namespace:IniFileVisual.Views"
+            mc:Ignorable="d" 
+            d:DesignHeight="450" d:DesignWidth="800" 
+            Title="IniFileVisual" WindowState="Maximized" 
+            Icon="{StaticResource LogoSvg}"
+            DataContext="{Binding Source={StaticResource Locator},Path=Main}">
+    <hc:Interaction.Triggers>
+        <hc:EventTrigger EventName="Closing">
+            <hc:InvokeCommandAction Command="{Binding Source={StaticResource Locator},Path=Tab.CloseCheck}" />
+        </hc:EventTrigger>
+    </hc:Interaction.Triggers>
+    <hc:SimplePanel>
+        <Menu>
+            <i:Interaction.Triggers>
+                <i:KeyTrigger Key="F">
+                    <i:InvokeCommandAction Command="{Binding OpenMenuItemSubmenu}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Menu},Path=Items[0]}"/>
+                </i:KeyTrigger>
+                <i:KeyTrigger Key="E">
+                    <i:InvokeCommandAction Command="{Binding OpenMenuItemSubmenu}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Menu},Path=Items[1]}"/>
+                </i:KeyTrigger>
+                <i:KeyTrigger Key="V">
+                    <i:InvokeCommandAction Command="{Binding OpenMenuItemSubmenu}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Menu},Path=Items[2]}"/>
+                </i:KeyTrigger>
+                <i:KeyTrigger Key="T">
+                    <i:InvokeCommandAction Command="{Binding OpenMenuItemSubmenu}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Menu},Path=Items[3]}"/>
+                </i:KeyTrigger>
+                <i:KeyTrigger Key="W">
+                    <i:InvokeCommandAction Command="{Binding OpenMenuItemSubmenu}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Menu},Path=Items[4]}"/>
+                </i:KeyTrigger>
+                <i:KeyTrigger Key="H">
+                    <i:InvokeCommandAction Command="{Binding OpenMenuItemSubmenu}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Menu},Path=Items[5]}"/>
+                </i:KeyTrigger>
+            </i:Interaction.Triggers>
+            <MenuItem Header="文件(F)" DataContext="{Binding Source={StaticResource Locator},Path=Tab}">
+                <i:Interaction.Triggers>
+                    <i:KeyTrigger Key="C" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding CloseSelected}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="S" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding Save}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="A" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding SaveAs}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="L" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding SaveAll}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="I" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding Source={StaticResource Locator},Path=Main.WindowShowDialog}" CommandParameter="{x:Type local:SettingWindow}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="X" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding Source={StaticResource Locator},Path=Main.Exit}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl+Shift" Key="N">
+                        <i:InvokeCommandAction Command="{Binding AddTempItem}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl+Shift" Key="O">
+                        <i:InvokeCommandAction Command="{Binding AddItems}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl" Key="S">
+                        <i:InvokeCommandAction Command="{Binding Save}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl+Shift" Key="S">
+                        <i:InvokeCommandAction Command="{Binding SaveAs}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl+Alt" Key="S">
+                        <i:InvokeCommandAction Command="{Binding SaveAll}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl+Alt" Key="I">
+                        <i:InvokeCommandAction  Command="{Binding Source={StaticResource Locator},Path=Main.WindowShowDialog}" CommandParameter="{x:Type local:SettingWindow}"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Alt" Key="F4">
+                        <i:InvokeCommandAction Command="{Binding Source={StaticResource Locator},Path=Main.Exit}"/>
+                    </i:KeyTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="新建(N)">
+                    <MenuItem Header="INI文件" InputGestureText="Ctrl+Shirt+N" Command="{Binding AddTempItem}"/>
+                </MenuItem>
+                <MenuItem Header="打开(O)">
+                    <MenuItem Header="INI文件" InputGestureText="Ctrl+Shirt+O" Command="{Binding AddItems}"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="关闭(C)" Command="{Binding CloseSelected}"/>
+                <Separator/>
+                <MenuItem Header="保存(S)" InputGestureText="Ctrl+S" Command="{Binding Save}"/>
+                <MenuItem Header="另存为(A)" InputGestureText="Ctrl+Shirt+S" Command="{Binding SaveAs}">
+                </MenuItem>
+                <MenuItem Header="全部保存(L)" InputGestureText="Ctrl+Alt+S" Command="{Binding SaveAll}"/>
+                <Separator/>
+                <MenuItem Header="设置(I)" InputGestureText="Ctrl+Shirt+I" Command="{Binding Source={StaticResource Locator},Path=Main.WindowShowDialog}" CommandParameter="{x:Type local:SettingWindow}"/>
+                <Separator />
+                <MenuItem Header="退出(X)" InputGestureText="Alt+F4" Command="{Binding Source={StaticResource Locator},Path=Main.Exit}"/>
+            </MenuItem>
+            <MenuItem Header="编辑(E)" DataContext="ApplicationCommands">
+                <i:Interaction.Triggers>
+                    <i:KeyTrigger Key="F" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Find"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="U" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Undo"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="R" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Redo"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="T" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Cut"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="C" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Copy"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="V" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Paste"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="D" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="Delete"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="A" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="SelectAll"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Modifiers="Ctrl" Key="G">
+                        <i:InvokeCommandAction Command="{Binding Source={StaticResource Locator},Path=Main.WindowShowDialog}" CommandParameter="{x:Type local:GoToLineWindow}"/>
+                    </i:KeyTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="转到(G)">
+                    <MenuItem Header="转到行" InputGestureText="Ctrl+G" Command="{Binding Source={StaticResource Locator},Path=Main.WindowShowDialog}" CommandParameter="{x:Type local:GoToLineWindow}"/>
+                    <MenuItem Header="换行" InputGestureText="Ctrl+G" Command="EditingCommands.EnterParagraphBreak"/>
+                    <MenuItem Header="上移一行" Command="EditingCommands.MoveUpByLine"/>
+                    <MenuItem Header="下移一行" Command="EditingCommands.MoveDownByLine"/>
+                    <MenuItem Header="上移一页" InputGestureText="PgUp" Command="EditingCommands.MoveUpByPage"/>
+                    <MenuItem Header="下移一页" InputGestureText="PgDn" Command="EditingCommands.MoveDownByPage"/>
+                    <MenuItem Header="转到首行" InputGestureText="Home" Command="EditingCommands.MoveToDocumentStart"/>
+                    <MenuItem Header="转到尾行" InputGestureText="End" Command="EditingCommands.MoveToDocumentEnd"/>
+                </MenuItem>
+                <MenuItem Header="查找和替换(F)" InputGestureText="Ctrl+F" Command="Find"/>
+                <Separator/>
+                <MenuItem Header="撤销(U)" InputGestureText="Ctrl+Z" Command="Undo"/>
+                <MenuItem Header="重做(R)" InputGestureText="Ctrl+Y" Command="Redo"/>
+                <Separator/>
+                <MenuItem Header="剪切(T)" InputGestureText="Ctrl+X" Command="Cut"/>
+                <MenuItem Header="复制(C)" InputGestureText="Ctrl+C" Command="Copy"/>
+                <MenuItem Header="粘贴(V)" InputGestureText="Ctrl+V" Command="Paste"/>
+                <MenuItem Header="删除(D)" InputGestureText="Del"    Command="Delete"/>
+                <MenuItem Header="全选(A)" InputGestureText="Ctrl+A" Command="SelectAll"/>
+                <Separator/>
+                <MenuItem Header="选择">
+                    <MenuItem Header="选中上一行" Command="EditingCommands.SelectUpByLine"/>
+                    <MenuItem Header="选中下一行" Command="EditingCommands.SelectDownByLine"/>
+                    <MenuItem Header="选中上一页" InputGestureText="Ctrl+Shift+PgUp" Command="EditingCommands.SelectUpByPage"/>
+                    <MenuItem Header="选中下一页" InputGestureText="Ctrl+Shift+PgDn" Command="EditingCommands.SelectDownByPage"/>
+                    <MenuItem Header="选到首行" InputGestureText="Ctrl+Shift+Home" Command="EditingCommands.SelectToDocumentStart"/>
+                    <MenuItem Header="选到尾行" InputGestureText="Ctrl+Shift+End" Command="EditingCommands.SelectToDocumentEnd"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="删除全部注释" Command="{Binding Source={StaticResource Locator},Path=Tab.DeleteAllComments}"/>
+                <MenuItem Header="删除全部键"   Command="{Binding Source={StaticResource Locator},Path=Tab.DeleteAllKeys}"/>
+            </MenuItem>
+            <MenuItem Header="视图(V)" DataContext="{Binding Source={StaticResource Locator},Path=Docking}">
+                <CheckBox Content="资源管理器"
+                          IsChecked="{Binding ElementName=ExplorerLayout, Path=IsHidden,Mode=OneWay, Converter={StaticResource Boolean2BooleanReConverter}}" 
+                          Command="{Binding LayoutToggle}" CommandParameter="{Binding ElementName=ExplorerLayout}"/>
+                <CheckBox Content="文本编辑器" 
+                          IsChecked="{Binding ElementName=EditorLayout, Path=IsHidden,Mode=OneWay, Converter={StaticResource Boolean2BooleanReConverter}}"
+                          Command="{Binding LayoutToggle}" CommandParameter="{Binding ElementName=EditorLayout}"/>
+                <CheckBox Content="信息窗口"
+                          IsChecked="{Binding ElementName=InfoLayout, Path=IsHidden,Mode=OneWay, Converter={StaticResource Boolean2BooleanReConverter}}"
+                          Command="{Binding LayoutToggle}" CommandParameter="{Binding ElementName=InfoLayout}"/>
+            </MenuItem>
+            <MenuItem Header="工具(T)">
+                <MenuItem Header="覆写" Command="{Binding WindowShowDialog}" CommandParameter="{x:Type local:OverWriteWindow}"/>
+            </MenuItem>
+            <MenuItem Header="窗口(W)" DataContext="{Binding Source={StaticResource Locator},Path=Docking}">
+                <i:Interaction.Triggers>
+                    <i:KeyTrigger Key="S" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding WriteLayout}" CommandParameter="UserLayout.xml"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="Y" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding ReadLayout}" CommandParameter="UserLayout.xml"/>
+                    </i:KeyTrigger>
+                    <i:KeyTrigger Key="R" ActiveOnFocus="True">
+                        <i:InvokeCommandAction Command="{Binding ReadLayout}" CommandParameter="Layout.xml"/>
+                    </i:KeyTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="保存窗口布局(S)" Command="{Binding WriteLayout}" CommandParameter="UserLayout.xml"/>
+                <MenuItem Header="应用窗口布局(Y)" Command="{Binding ReadLayout}"  CommandParameter="UserLayout.xml"/>
+                <MenuItem Header="重置窗口布局(R)" Command="{Binding ReadLayout}"  CommandParameter="Layout.xml"/>
+            </MenuItem>
+            <MenuItem Header="帮助(H)">
+                <MenuItem Header="查看帮助"/>
+                <MenuItem Header="特别鸣谢">
+                    <local:Thank/>
+                </MenuItem>
+                <MenuItem Header="关于IniFilerVisual">
+                    <local:About/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar Style="{StaticResource MainToolBarStyle}" DataContext="{Binding Tab,Source={StaticResource Locator}}">
+            <Button Style="{StaticResource UndoButtonStyle}" Command="ApplicationCommands.Undo"/>
+            <Button Style="{StaticResource RedoButtonStyle}" Command="ApplicationCommands.Redo"/>
+            <Separator/>
+            <Button Style="{StaticResource SaveButtonStyle}" Command="{Binding Save}"/>
+            <Separator/>
+            <Button Style="{StaticResource CommentButtonStyle}" Command="{Binding AddComment}"/>
+            <Separator/>
+            <Button Style="{StaticResource RunButtonStyle}"  Command="{Binding IniDebug}"/>
+            <Separator/>
+            <Button Style="{StaticResource LeftSelectButtonStyle}" Command="EditingCommands.SelectLeftByWord"/>
+            <Button Style="{StaticResource RightSelectButtonStyle}" Command="EditingCommands.SelectRightByWord"/>
+        </ToolBar>
+
+        <xcad:DockingManager Margin="10,60,10,10" DataContext="{Binding Source={StaticResource Locator},Path=Docking}">
+            <hc:Interaction.Triggers>
+                <hc:EventTrigger EventName="Loaded">
+                    <hc:InvokeCommandAction Command="{Binding SetManager}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=DockingManager}}"/>
+                </hc:EventTrigger>
+            </hc:Interaction.Triggers>
+            <xcad:LayoutRoot>
+                <xcad:LayoutPanel DockHeight="Auto" DockWidth="Auto">
+                    <xcad:LayoutAnchorablePaneGroup DockHeight="*" DockWidth="0.1*">
+                        <xcad:LayoutAnchorablePane DockHeight="*" DockWidth="*">
+                            <xcad:LayoutAnchorable x:Name="ExplorerLayout" Title="资源管理器" ContentId="0">
+                                <TreeView DataContext="{Binding Source={StaticResource Locator},Path=Tab}" 
+                                          ItemsSource="{Binding Items}" VirtualizingPanel.IsVirtualizing="True" ContextMenu="{StaticResource FileManagerContextMenu}">
+                                    <TreeView.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding FileName}"/>
+                                        </DataTemplate>
+                                    </TreeView.ItemTemplate>
+                                    <hc:Interaction.Triggers>
+                                        <hc:EventTrigger EventName="SelectedItemChanged">
+                                            <hc:InvokeCommandAction Command="{Binding Source={StaticResource Locator},Path=Tree.SetSelectedItem}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=TreeView},Path=SelectedItem}"/>
+                                        </hc:EventTrigger>
+                                    </hc:Interaction.Triggers>
+                                </TreeView>
+                            </xcad:LayoutAnchorable>
+                        </xcad:LayoutAnchorablePane>
+                    </xcad:LayoutAnchorablePaneGroup>
+                    <xcad:LayoutAnchorablePaneGroup DockHeight="*" DockWidth="0.8*" Orientation="Vertical">
+                        <xcad:LayoutAnchorablePane DockHeight="0.99*" DockWidth="*">
+                            <xcad:LayoutAnchorable x:Name="EditorLayout" Title="文本编辑器" ContentId="1">
+                                <hc:TabControl x:Name="EditorTab" DataContext="{Binding Source={StaticResource Locator},Path=Tab}" ItemsSource="{Binding Items}" Style="{StaticResource TabControlEditorStyle}">
+                                    <hc:TabControl.ItemContainerStyle>
+                                        <Style TargetType="hc:TabItem" BasedOn="{StaticResource TabItemPlusBaseStyle}">
+                                            <Setter Property="Header"  Value="{Binding FileName}"/>
+                                            <Setter Property="Content" Value="{Binding}"/>
+                                        </Style>
+                                    </hc:TabControl.ItemContainerStyle>
+                                    <hc:Interaction.Triggers>
+                                        <hc:RoutedEventTrigger RoutedEvent="hc:TabItem.Closing">
+                                            <hc:EventToCommand Command="{Binding CloseByEvent}" PassEventArgsToCommand="True" />
+                                        </hc:RoutedEventTrigger>
+                                    </hc:Interaction.Triggers>
+                                </hc:TabControl>
+                            </xcad:LayoutAnchorable>
+                        </xcad:LayoutAnchorablePane>
+                        <xcad:LayoutAnchorablePane DockHeight="0.01*"  DockWidth="*">
+                            <xcad:LayoutAnchorable x:Name="InfoLayout" Title="调试窗口" ContentId="2">
+                                <ListView DataContext="{Binding Source={StaticResource Locator},Path=Tab}" 
+                                          ItemsSource="{Binding ParserErrors}"  FontSize="12" Margin="0,0,0,15">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="行号" DisplayMemberBinding ="{Binding LineNumber}"/>
+                                            <GridViewColumn Header="值"   DisplayMemberBinding ="{Binding LineValue}"/>
+                                        </GridView>
+                                    </ListView.View>
+                                    <hc:Interaction.Triggers>
+                                        <hc:EventTrigger EventName="MouseDoubleClick">
+                                            <hc:InvokeCommandAction Command="{Binding GoToLine}" CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=ListView},Path=SelectedItem.LineNumber}"/>
+                                        </hc:EventTrigger>
+                                    </hc:Interaction.Triggers>
+                                </ListView>
+                            </xcad:LayoutAnchorable>
+                        </xcad:LayoutAnchorablePane>
+                    </xcad:LayoutAnchorablePaneGroup>
+                    <xcad:LayoutAnchorablePaneGroup DockHeight="*" DockWidth="*">
+                        <xcad:LayoutAnchorablePane x:Name="LayoutPane" DockHeight="*" DockWidth="*"/>
+                    </xcad:LayoutAnchorablePaneGroup>
+                </xcad:LayoutPanel>
+            </xcad:LayoutRoot>
+        </xcad:DockingManager>
+        <hc:SimpleStackPanel hc:Growl.GrowlParent="True" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+    </hc:SimplePanel>
+</hc:Window>
