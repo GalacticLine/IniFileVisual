@@ -3,6 +3,8 @@
 IniFileVisual 是我当初学习 C# 时所编写的 Ini 文件编辑器。它基于 HandyControl 的 UI 框架开发， Avalonedit 作为文件编辑器内核，使用 ini-parser 对ini文件进行处理。
 
 ## 如何编译该项目
+**项目位置:** [/IniFileVisual](/IniFileVisual)
+
 * 添加对 **Avalonedit** 项目的引用。项目地址： https://github.com/GalacticLine/AvalonEdit.git
   > 注：该项目不是原版的Avalonedit，是我在原项目基础上进行微小修改后的分支。 原版：https://github.com/icsharpcode/AvalonEdit
 
@@ -16,6 +18,8 @@ IniFileVisual 是我当初学习 C# 时所编写的 Ini 文件编辑器。它基
   * **MvvmLightLibs** (版本5.4.1.1)
 
 添加完成之后，您可以在 VS Studio 中正常编译该项目。
+
+**编译完成的项目：** [/IniFileVisual.v.1.0.0](/IniFileVisual.v.1.0.0)
 
 ## 注意事项
 ** 项目目标框架为 **netcoreapp3.1**
