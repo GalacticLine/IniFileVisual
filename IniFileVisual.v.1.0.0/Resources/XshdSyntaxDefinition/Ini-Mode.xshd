@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="IniRule" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<Color name="Section" foreground="Orange"/>
+	<Color name="Key" foreground="RoyalBlue"/>
+	<Color name="Comment" foreground="Green" />
+	<Color name="BeEqualTo" foreground="#D3D3D3" />
+	<RuleSet>
+		<Span color="Section">
+			<Begin>^(\s*)\[((?!\[|\]).)*\]</Begin>
+			<End></End>
+		</Span>
+		<Span color="Key">
+			<Begin>^[^(\[|;)].*?(?==)</Begin>
+			<End></End>
+		</Span>
+		<Span color="Comment" begin=";"/>
+		<Keywords foreground="#D3D3D3">
+			<Word>=</Word>
+		</Keywords>
+	</RuleSet>
+</SyntaxDefinition>

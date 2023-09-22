@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LayoutRoot>
+  <RootPanel Orientation="Horizontal">
+    <LayoutAnchorablePaneGroup Orientation="Horizontal" DockWidth="0.12*">
+      <LayoutAnchorablePane>
+        <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="资源管理器" IsSelected="True" ContentId="0" CanClose="False" />
+      </LayoutAnchorablePane>
+    </LayoutAnchorablePaneGroup>
+    <LayoutAnchorablePaneGroup Orientation="Vertical">
+      <LayoutAnchorablePaneGroup Orientation="Horizontal" DockHeight="0.8*">
+        <LayoutAnchorablePane>
+          <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="文件编辑器" IsSelected="True" ContentId="1" CanClose="False" />
+        </LayoutAnchorablePane>
+      </LayoutAnchorablePaneGroup>
+      <LayoutAnchorablePaneGroup Orientation="Horizontal" DockHeight="0.2*">
+        <LayoutAnchorablePane>
+          <LayoutAnchorable AutoHideMinWidth="100" AutoHideMinHeight="100" Title="信息窗口" IsSelected="True" ContentId="2" FloatingHeight="-5" CanClose="False" />
+        </LayoutAnchorablePane>
+      </LayoutAnchorablePaneGroup>
+    </LayoutAnchorablePaneGroup>
+  </RootPanel>
+  <TopSide />
+  <RightSide />
+  <LeftSide />
+  <BottomSide />
+  <FloatingWindows />
+  <Hidden />
+</LayoutRoot>

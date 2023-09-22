@@ -1,0 +1,206 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "IniFileVisual/1.0.0": {
+        "dependencies": {
+          "AvalonEdit": "6.2.0",
+          "CommonServiceLocator": "2.0.7",
+          "Dirkster.AvalonDock": "4.72.1",
+          "HandyControl": "3.4.0",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39",
+          "MvvmLight": "5.4.1.1",
+          "MvvmLightLibs": "5.4.1.1",
+          "ini-parser-netstandard": "2.5.2"
+        },
+        "runtime": {
+          "IniFileVisual.dll": {}
+        }
+      },
+      "CommonServiceLocator/2.0.7": {
+        "runtime": {
+          "lib/netcoreapp3.0/CommonServiceLocator.dll": {
+            "assemblyVersion": "2.0.7.0",
+            "fileVersion": "2.0.7.0"
+          }
+        }
+      },
+      "Dirkster.AvalonDock/4.72.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/AvalonDock.dll": {
+            "assemblyVersion": "4.72.1.0",
+            "fileVersion": "4.72.1.0"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/ca-ES/AvalonDock.resources.dll": {
+            "locale": "ca-ES"
+          },
+          "lib/netcoreapp3.0/cs-CZ/AvalonDock.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/netcoreapp3.0/de/AvalonDock.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/es/AvalonDock.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/fr/AvalonDock.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/hu/AvalonDock.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/netcoreapp3.0/it/AvalonDock.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/ja/AvalonDock.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/AvalonDock.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/nl-BE/AvalonDock.resources.dll": {
+            "locale": "nl-BE"
+          },
+          "lib/netcoreapp3.0/pl/AvalonDock.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pt/AvalonDock.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/ro/AvalonDock.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ru/AvalonDock.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/sv/AvalonDock.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/zh-Hans/AvalonDock.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/AvalonDock.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "HandyControl/3.4.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/HandyControl.dll": {
+            "assemblyVersion": "3.4.0.0",
+            "fileVersion": "3.4.0.0"
+          }
+        }
+      },
+      "ini-parser-netstandard/2.5.2": {
+        "runtime": {
+          "lib/netstandard2.0/INIFileParser.dll": {
+            "assemblyVersion": "2.5.2.0",
+            "fileVersion": "2.5.2.0"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
+          }
+        }
+      },
+      "MvvmLight/5.4.1.1": {},
+      "MvvmLightLibs/5.4.1.1": {
+        "runtime": {
+          "lib/net45/GalaSoft.MvvmLight.Extras.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          },
+          "lib/net45/GalaSoft.MvvmLight.Platform.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          },
+          "lib/net45/GalaSoft.MvvmLight.dll": {
+            "assemblyVersion": "5.4.1.0",
+            "fileVersion": "5.4.1.0"
+          },
+          "lib/net45/System.Windows.Interactivity.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "3.0.40218.0"
+          }
+        }
+      },
+      "AvalonEdit/6.2.0": {
+        "runtime": {
+          "ICSharpCode.AvalonEdit.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IniFileVisual/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommonServiceLocator/2.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-deByA+/7hfPSMqaqcITTkeZhGw41qiIon5F6Q5n5EcMPeYc5hXlifIrVpPKsur4g/PuxYU6umjTx8kQMog4npw==",
+      "path": "commonservicelocator/2.0.7",
+      "hashPath": "commonservicelocator.2.0.7.nupkg.sha512"
+    },
+    "Dirkster.AvalonDock/4.72.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m5J03HVntDM3eu7GyzLWlNdr2c2TTBAoD33Pq1yCID7vEtk13VVngtlmegp67WUvpL5JUC8G2xU8n+ThZKKz0Q==",
+      "path": "dirkster.avalondock/4.72.1",
+      "hashPath": "dirkster.avalondock.4.72.1.nupkg.sha512"
+    },
+    "HandyControl/3.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MgD5lxIm23oCv3+mFWH6EARLCOmR/spFaWeb813QtUDIQeUsbGK02xm1xDQEd0UGBcba6aho1FgCtiU4q7hHDw==",
+      "path": "handycontrol/3.4.0",
+      "hashPath": "handycontrol.3.4.0.nupkg.sha512"
+    },
+    "ini-parser-netstandard/2.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTyGzgT/a+mD2HxopOGpb/yWWhu5TTPgF59XUlHjhlNv7dbt9DME/qozIR7HreVAVpNnZSqP9A8TeViK5s949g==",
+      "path": "ini-parser-netstandard/2.5.2",
+      "hashPath": "ini-parser-netstandard.2.5.2.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    },
+    "MvvmLight/5.4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fTUDMWT//ChZGd7Q5k0IaJuIXgh+FM43pCStxup7kgh1MQXvC48CjpjWkp5Auru/YXhHOJOMgD1NdtFZgn6K2g==",
+      "path": "mvvmlight/5.4.1.1",
+      "hashPath": "mvvmlight.5.4.1.1.nupkg.sha512"
+    },
+    "MvvmLightLibs/5.4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xYpVzOYnIz/M6T0pdc3w5t0vrt2ZKspSS+CZjQ+pZE+5yHv9qXSWkncHJXb6D7Egstalso4ivnIUkA1xEClViw==",
+      "path": "mvvmlightlibs/5.4.1.1",
+      "hashPath": "mvvmlightlibs.5.4.1.1.nupkg.sha512"
+    },
+    "AvalonEdit/6.2.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
