@@ -19,7 +19,7 @@ IniFileVisual 是我当初学习 C# 时所编写的 Ini 文件编辑器。它基
 
 添加完成之后，您可以在 VS Studio 中正常编译该项目。
 
-**编译完成的项目：** [/IniFileVisual.v.1.0.0](/IniFileVisual.v.1.0.0)
+**编译完成的应用程序：** [/IniFileVisual.v.1.0.0](/IniFileVisual.v.1.0.0)
 
 ## 注意事项
 ** 项目目标框架为 **netcoreapp3.1**
